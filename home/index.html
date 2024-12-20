@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENAIFLIX - Filmes e Séries</title>
+    <link rel="stylesheet" href="../assets/styles/global.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+
+    <header class="cabecalho">
+
+        <div>
+            
+            <a class="logo" href="../home/">SENAIFLIX</a>
+
+        </div>
+
+        <nav>
+
+            <a href="#">Início</a>
+            <a href="#titulo-filmes">Filmes</a>
+            <a href="#titulo-series">Séries</a>
+
+        </nav>
+        
+    </header>
+    
+    <header id="cabecalho-mobile">
+
+        <button class="botao-de-fechar" onclick="fecharCabecalhoMobile()">
+
+            <img src="../assets/imgs/xmark-solid.svg">
+
+        </button>
+
+        <nav>
+
+            <a href="#" onclick="fecharCabecalhoMobile()">inicio</a>
+            <a href= "#titulo-filmes" onclick="fecharCabecalhoMobile()">Filmes</a>
+            <a href="#titulo-series" onclick="fecharCabecalhoMobile()">Series</a>
+
+        </nav>
+
+    </header>
+
+    <button class="menu-de-hamburguer" onclick="abrirCabecalhoMobile()">
+
+        <img src="../assets/imgs/bars-solid.svg" alt="Menu de hamburguer">
+
+    </button>
+
+    <main>
+
+        <section class="banner">
+
+            <div class="textos">
+
+                <h1>Thor Ragnarok!</h1>        
+                <p>Thor: Ragnarok (2017) é o terceiro filme da franquia solo de Thor no Universo Cinematográfico da Marvel, dirigido por Taika Waititi. A história começa quando Thor descobre que sua irmã perdida, Hela, a poderosa deusa da morte, escapou de sua prisão e está determinada a conquistar Asgard, desencadeando o apocalipse conhecido como Ragnarok.</p>
+
+            </div>
+
+            <div class="gradiente-de-baixo"></div>
+
+        </section>
+
+        <section class="filmes-series">
+
+            <div class="inputs">
+
+                <label>
+                    Pesquise por filmes e/ou séries:
+                    <input 
+                        onkeyup="aoPesquisarPorTitulo(this.value)" placeholder="Insira um título"
+                    ></input>
+                </label>
+                
+                <label>
+                    Filtrar por gênero:
+                    <select name="genero" onchange="aoFiltrarPorGenero(this.value)">
+                        <option selected value="">Selecione um gênero</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Ficção científica">Ficção científica</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Ação">Ação</option>
+                        <option value="Comédia">Comédia</option>
+                        <option value="Animação">Animação</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Crime">Crime</option>
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Mistério">Mistério</option>
+                        <option value="Sci-Fi & Fantasy">Sci-Fi & Fantasy</option>
+                    </select>
+                </label>
+
+                <button class="limparfiltros" onclick="limparfiltros()">limpar filtros</button>
+
+            </div>
+
+            <h2 id="titulo-filmes">Filmes</h2>
+
+            <div id="filmes-card-container" class="card-container">
+
+                <a href="../detalhes-do-filme/" class="card"></a>
+                <a href="../detalhes-do-filme/" class="card"></a>                
+                <a href="../detalhes-do-filme/" class="card"></a>
+                <a href="../detalhes-do-filme/" class="card"></a>
+                <a href="../detalhes-do-filme/" class="card"></a>
+                <a href="../detalhes-do-filme/" class="card"></a>
+
+            </div>
+            
+        </section>
+
+        <section class="filmes-series">
+
+            <h2 id= "titulo-series">Séries</h2>
+
+            <div id="series-card-container" class="card-container">
+
+                <a href="../detalhes-do-filme/" class="card"></a>
+                <a href="../detalhes-do-filme/" class="card"></a>
+                <a href="../detalhes-do-filme/" class="card"></a>
+                <a href="../detalhes-do-filme/" class="card"></a>
+                <a href="../detalhes-do-filme/" class="card"></a>
+                <a href="../detalhes-do-filme/" class="card"></a>
+
+            </div>
+            
+        </section>
+
+    </main>
+
+    <footer>
+
+        <script>
+
+            carregarFilmes();
+            carregarSeries();
+           
+        </script>
+
+        <p>Nos siga nas redes sociais.</p>
+
+        <div class="icons-container">
+
+            <img src="../assets/imgs/twitter-brands-solid.svg" alt="ícone do facebook.">
+
+            <img src="../assets/imgs/twitter-brands-solid.svg" alt="ícone do instagram.">
+
+            <img src="../assets/imgs/twitter-brands-solid.svg" alt="ícone do twitter.">
+        
+        </div>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* Importa a fonte "Ubuntu" do Google Fonts, incluindo várias variações de peso e itálico. */
+
+
+html {
+    scroll-behavior:smooth;
+}
+
+.menu-de-hamburguer{
+    display: none;
+}
+
+
+* {
+    margin: 0px; /* Remove a margem padrão de todos os elementos */
+    padding: 0px; /* Remove o preenchimento (padding) padrão de todos os elementos */
+    box-sizing: border-box; /* Ajusta o box model para incluir padding e bordas no cálculo de largura e altura */
+    font-size: 14px; /* Define o tamanho da fonte como 14px */
+    font-family: "Ubuntu"; /* Define a fonte "Ubuntu" como a fonte principal */
+    outline: none;
+}
+
+/* @media screen and (max-width: 600px) {
+    * {
+      font-size: 8px !important; /* Ajusta o tamanho da fonte para 8px em telas pequenas (máximo de 600px)
+    }
+} */
+
+body {
+    background-color: black;
+}
+
+.cabecalho {
+    position: absolute; /* Posiciona o .cabecalho de forma absoluta, sobrepondo outros elementos */
+    width: 100%; /* Define a largura do .cabecalho como 100% da tela */
+    background: rgb(0,0,0); /* Define a cor de fundo como preta */
+    background: -moz-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%); /* Gradiente linear para navegadores antigos (Mozilla) */
+    background: -webkit-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%); /* Gradiente linear para navegadores antigos (Webkit) */
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%); /* Gradiente linear padrão (do preto para transparente) */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#ffffff",GradientType=1); /* Gradiente para navegadores antigos (IE) */
+    padding: 15px; /* Adiciona 15px de padding (espaçamento interno) */
+    padding-left: 120px; 
+    padding-right: 120px; 
+    display: flex; /* Define o layout como flexbox */
+    justify-content: space-between; /* Distribui o conteúdo de forma que haja espaço entre os itens no .cabecalho */
+    z-index: 1;
+}
+
+.cabecalho .logo {
+    color: white; /* Define a cor do texto dentro de <span> no .cabecalho como branca */
+    text-decoration: none;
+}
+
+.cabecalho nav a {
+    color: white; /* Define a cor dos links dentro do <nav> no .cabecalho como branca */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    margin-left: 10px; /* Adiciona uma margem de 10px à esquerda de cada link */
+}
+
+#cabecalho-mobile {
+    display: none;
+}
+
+.banner {
+    background-image: url("../imgs/bg.jpg"); /* Define a imagem de fundo do banner */
+    background-size: cover; /* Faz com que a imagem cubra toda a área disponível */
+    background-position: center; /* Centraliza a imagem de fundo */
+    width: 100%; /* Define a largura do banner como 100% da largura da janela de visualização */
+    height: 100vh; /* Define a altura do banner como 100% da altura da janela de visualização */
+    display: flex; /* Usa flexbox para o layout */
+    align-items: flex-end; /* Alinha os itens dentro do banner na parte inferior */
+    padding-left: 120px; /* Adiciona 120px de padding à esquerda */
+    padding-right: 120px; /* Adiciona 120px de padding à esquerda */
+    padding-bottom: 200px; /* Adiciona 200px de padding na parte inferior */
+    position: relative;
+}
+
+.banner h1 {
+    color: white; /* Define a cor do texto do <h1> dentro do banner como branca */
+    font-size: 3em; /* Define o tamanho da fonte como 3 vezes o tamanho padrão */
+    margin-bottom: 10px;
+}
+
+.banner p {
+    color: white; /* Define a cor do texto do <p> dentro do banner como branca */
+    width: 60vw; /* Define a largura do parágrafo como 60% da largura da janela de visualização */
+}
+
+.banner .textos {
+
+    z-index: 1;
+
+}
+
+.gradiente-de-baixo {
+
+    height: 70vh;
+    width: 100%;
+
+    background-color: black;
+
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1); 
+
+}
+
+.filmes-series {
+
+    width: 100%;
+    height: auto;
+    background-color: black;
+    min-height: 200px; /* Altura mínima */
+
+    padding-top: 40px;
+    padding-left: 120px;
+    padding-right: 120px;
+
+}
+
+.filmes-series .inputs {
+
+    display: flex;
+    margin-bottom: 40px;
+
+}
+
+.filmes-series .inputs label {
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 10px;
+
+}
+
+.filmes-series .inputs label input, 
+.filmes-series .inputs label select {
+
+    width: 250px;
+
+    margin-top: 10px;
+    background-color: black;
+    border-radius: 7px;
+    border: 1px solid white;
+    padding: 5px;
+    color: white;
+
+}
+
+.filmes-series h2 {
+
+    color: white;
+    font-size: 1.5em;
+
+}
+
+.filmes-series .card-container {
+
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+
+    display: flex;
+
+}
+
+.filmes-series .card {
+
+    height: 180px;
+    width: 120px;
+    
+    background-image: url("../imgs/spider-man_sem_volta_para_casa.jpg");
+    background-size: cover;
+    background-position: center;
+
+    margin-right: 10px;
+
+    border-radius: 7px;
+animation-name: mostrarcartao;
+animation-duration: 5s;
+}
+
+
+
+@keyframes mostrarcartao {
+0%{
+    transform: translateY(25px);
+    opacity: 0;
+}
+
+100% {
+
+    transform: translateY(0px);
+opacity: 1;
+
+}
+
+}
+
+
+
+footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+    margin-bottom: 10px;
+}
+
+footer .icons-container {
+    display: flex;
+}
+
+footer .icons-container img {
+    height: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+.limparfiltros {
+background-color: black;
+
+color: white;
+margin-top: auto;
+}
+/* TELA DE DETALHES - INÍCIO */
+.detalhes_filme_container {
+
+    padding-top: 100px;
+    background-color: black;
+    padding-left: 120px;
+    padding-right: 120px;
+
+}
+
+/* SESSÃO VIDEO */
+#video_trailer {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+/* SESSÃO MAIN */
+main {
+    min-height: 100vh;
+}
+
+/* SESSÃO INFORMAÇÕES */
+.section_informacoes {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 100px;
+    color: white;
+}
+
+.section_informacoes>img {
+    height: 504px;
+    border-radius: 7px;
+    transition: 1s ease-in-out;
+}
+
+.section_informacoes>img:hover {
+    scale: 1.05;
+}
+
+.section_informacoes>div {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.section_informacoes>div>h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* GÊNERO */
+.section_informacoes>div>div {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.section_informacoes>div>p {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.section_informacoes .classificacao {
+
+    height: 50px;
+
+}
+
+/* EXEMPLOS usando o nth-child */
+
+/* DURAÇÃO DO FILME/SÉRIE */
+.V>div>p:nth-child(3)>span {
+    font-weight: 500;
+}
+
+/* AVALIAÇÃO */
+.section_informacoes>div>div:nth-child(5)>div {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* SESSÃO ELENCO */
+.section_elenco {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    color: white;
+    margin-top: 100px;
+}
+
+.section_elenco>h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.section_elenco>div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 38px;
+}
+
+.card_elenco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.card_elenco>img {
+    height: 200px;
+    border-radius: 7px;
+}
+
+.card_elenco>span {
+    font-size: 24px;
+    font-weight: 400;
+    width: 118px;
+    text-align: center;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+    /* Quando a tela tiver 768px ou menor, estas regras CSS serão ativadas */
+    .banner {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 35px;
+    }
+    .banner p {
+        font-size: 20px;
+        width: 100%;
+        text-align: justify;
+    }
+    .gradiente-de-baixo {
+        height: 90vh;
+    }
+    .filmes-series {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Forma 1 */
+    /* .filmes-series .inputs {
+        flex-direction: column;
+    } */
+
+    /* Forma 2 */
+    .filmes-series .inputs {
+        flex-wrap: wrap;
+    }
+
+    .filmes-series .inputs label {
+
+        margin-bottom: 10px;
+
+    }
+
+    .filmes-series .card-container {
+
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+
+    .filmes-series .card-container .card {
+
+        flex-basis: calc(50% - 5px); /* Define o tamanho mínimo do card, width também funcionaria */
+        /* Utilizei calc(50% - 5px) para descontar o margin-right: 10px que o .card tem, e como temos 2 cards por linha, dando removendo 5px de cada faz com que o elemento caiba perfeitamente */
+
+        height: 230px;
+        margin-bottom: 10px;
+
+    }
+
+    .filmes-series .card-container .card:nth-child(even) {
+
+        margin-right: 0px !important;
+
+    }
+
+    /* CABECALHO - MOBILE */
+    .cabecalho {
+        display: none;
+    }
+
+    #cabecalho-mobile {
+
+        position: fixed;
+
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+
+        z-index: 2;
+
+    }
+
+    #cabecalho-mobile nav {
+
+        display: flex;
+        flex-direction: column;
+        padding-top: 20vh;
+        padding-left: 15px;
+
+    }
+
+    #cabecalho-mobile nav a {
+
+        color: white;
+        font-size: 4em;
+        margin-bottom: 40px;
+
+    }
+
+    .botao-de-fechar {
+
+        width: 50px;
+        height: 50px;
+
+        background-color: transparent;
+        border: none;
+
+        position: absolute; /* Deixa o elemento flutuando na tela */
+        top: 10px;
+        right: 10px;
+
+    }
+
+    .botao-de-fechar img {
+
+        width: 50px;
+        height: 50px;
+
+    }
+
+    .menu-de-hamburguer {
+display: flex;
+        width: 50px;
+        height: 50px;
+
+        background-color: transparent;
+        border: none;
+
+        position: absolute; /* Deixa o elemento flutuando na tela */
+        top: 10px;
+        right: 10px;
+        
+        z-index: 1;
+
+    }
+
+}
